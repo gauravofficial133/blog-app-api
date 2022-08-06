@@ -1,10 +1,13 @@
 .gitignore
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-!**/src/main/resources/application-prod.properties
+
+blog-app-api/src/main/resources/application-prod.properties
+
 ### STS ###
 .apt_generated
 .classpath
@@ -33,3 +36,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+
+
+
