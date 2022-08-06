@@ -48,12 +48,14 @@ public class UserController {
 		return ResponseEntity.ok(this.userService.getUserById(userId));
 	}
 	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PutMapping("/{userId}")
 	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto,@PathVariable Integer userId){
 		UserDto updatedUser =  this.userService.updateUser(userDto, userId); 
 		return ResponseEntity.ok(updatedUser);
 	}
 	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@DeleteMapping("/{userId}")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable Integer userId){
 		this.userService.deleteUser(userId);
